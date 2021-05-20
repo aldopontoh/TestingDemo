@@ -1,4 +1,3 @@
-import { Selector } from 'testcafe';
 import ExamplePage from '../page-objects/pages/examplePage';
 
 const examplePage = new ExamplePage()

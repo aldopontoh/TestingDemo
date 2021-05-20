@@ -1,8 +1,8 @@
 import {Selector,ClientFunction} from 'testcafe';
+import ExamplePage from '../page-objects/pages/examplePage';
 
-const developerName = Selector("#developer-name");
-const osOption = Selector("#macos");
-const submitButton = Selector("#submit-button");
+const examplePage = new ExamplePage()
+
 
 const getPageURL = ClientFunction(() => window.location.href); 
 
@@ -11,8 +11,8 @@ fixture("First Fixture")
 
 test("First Test", async t => {
  await t
-        .typeText(developerName,"TAU")
-        .click(osOption)
-        .click(submitButton)
+        .typeText(examplePage.developerName,"TAU")
+        .click(examplePage.osOption)
+        .click(examplePage.submitButton)
         .expect(getPageURL()).contains('thank-you');
 });

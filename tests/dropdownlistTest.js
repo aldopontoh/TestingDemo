@@ -1,13 +1,12 @@
-import {Selector} from 'testcafe';
+import ExamplePage from "../page-objects/pages/examplePage";
 
-const insterfaceSelect = Selector('select#preferred-interface');
-const interfaceOption = insterfaceSelect.find('option');
+const examplePage = new ExamplePage
 
 fixture("Select elementfrom DropdownList")
 .page('https://devexpress.github.io/testcafe/example/');
 
 test('select element test', async t =>{
     await t
-    .click(insterfaceSelect)
-    .click(interfaceOption.withText('Both'));
+    .click(examplePage.insterfaceSelect)
+    .click(examplePage.interfaceOption.withText('Both'));
 })
