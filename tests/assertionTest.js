@@ -1,17 +1,16 @@
-import {Selector} from 'testcafe';
+import { Selector } from 'testcafe';
+import ExamplePage from '../page-objects/pages/examplePage';
 
-const developerName = Selector("#developer-name");
-const osOption = Selector("#macos");
-const submitButton = Selector("#submit-button");
+const examplePage = new ExamplePage()
 
 fixture("First Fixture")
     .page("https://devexpress.github.io/testcafe/example/");
 
 test("First Test", async t => {
- await t
-        .expect(developerName.value).eql('','input is empty')
-        .typeText(developerName,"TAU")
-        .expect(developerName.value).eql('TAU','input contains "TAU"')//"TAUddd" after .eql
-        .click(osOption)
-        .click(submitButton);
+    await t
+        .expect(examplePage.developerName.value).eql('', 'input is empty')
+        .typeText(examplePage.developerName, "TAU")
+        .expect(examplePage.developerName.value).eql('TAU', 'input contains "TAU"')//"TAUddd" after .eql
+        .click(examplePage.osOption)
+        .click(examplePage.submitButton);
 });
