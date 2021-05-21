@@ -1,17 +1,16 @@
-import {Selector} from 'testcafe';
+import ExamplePage from '../page-objects/pages/examplePage';
 
-const iFrameName = Selector('iframe#mce_0_ifr');
-const textArea = Selector('body#tinymce.mce-content-body');
+const examplePage = new ExamplePage
 
 fixture("Iframe Fiture")
 .page("http://the-internet.herokuapp.com/iframe");
 
 test("iFrame test", async t => {
     await t
-        .switchToIframe(iFrameName)
-        .click(textArea)
+        .switchToIframe(examplePage.iFrameName)
+        .click(examplePage.textArea)
         .pressKey('ctrl+a delete')
-        .typeText(textArea, "Hallo, Aldo here")
-        .expect(textArea.innerText).contains("Aldo")
+        .typeText(examplePage.textArea, "Hallo, Aldo here")
+        .expect(examplePage.textArea.innerText).contains("Aldo")
         .switchToMainWindow();
 })

@@ -1,15 +1,15 @@
-import { Selector } from 'testcafe';
+import ExamplePage from '../page-objects/pages/examplePage';
 
-const fileUpload = Selector('input#file-upload');
-const uploadFileButton = Selector('input#file-submit.button');
+const examplePage = new ExamplePage
+
 
 fixture("File Upload Fixture")
     .page("https://the-internet.herokuapp.com/upload");
 
 test("File Upload test",async t =>{
     await t
-        .setFilesToUpload(fileUpload,'../../upload/logo.png')
-        .clearUpload(fileUpload)
-        .setFilesToUpload(fileUpload,'../../upload/logo.png')
-        .click(uploadFileButton);
+        .setFilesToUpload(examplePage.fileUpload,'../page-objects/upload/logo.png')
+        .clearUpload(examplePage.fileUpload)
+        .setFilesToUpload(examplePage.fileUpload,'../page-objects/upload/logo.png')
+        .click(examplePage.uploadFileButton);
 });

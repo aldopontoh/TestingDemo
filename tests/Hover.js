@@ -4,5 +4,5 @@ fixture('Hover Test')
 test("Hover Test", async t =>{
     await t
         .setTestSpeed(0.1)
-        .hover('input#populate');
+        .hover('input#populate');//mengarahkan kursor saja
 })

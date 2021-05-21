@@ -3,5 +3,5 @@ fixture("Navigare Example")
 
 test('Navigate Test', async t =>{
     await t
-        .navigateTo("https://www.google.com");
+        .navigateTo("https://www.google.com");//pindah url saja
 });
