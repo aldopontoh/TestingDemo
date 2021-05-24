@@ -11,5 +11,6 @@ test("File Upload test",async t =>{
         .setFilesToUpload(examplePage.fileUpload,'../page-objects/upload/logo.png')
         .clearUpload(examplePage.fileUpload)
         .setFilesToUpload(examplePage.fileUpload,'../page-objects/upload/logo.png')
+        .debug()//debug
         .click(examplePage.uploadFileButton);
 });

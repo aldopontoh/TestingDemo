@@ -7,3 +7,11 @@ test("First Test", async t =>{
         .click("#macos")
         .click("#submit-button");
 });
+
+
+test("Second Test", async t =>{
+    await t 
+        .typeText("#developer-name","Renaldo Pontoh")
+        .click("#macos")
+        .click("#submit-button");
+});
